@@ -1,4 +1,4 @@
-name: Type conversion
+name: file_handling_homework
 on: [push]
 jobs:
   build:
@@ -11,7 +11,7 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v2
         with:
-          repository: codeschooluz/file_handling_test
+          repository: codeschooluz/file_handling_test 
           token: ${{secrets.TEST_KEY}}
           path: test
       - name: Install dependencies
@@ -21,6 +21,11 @@ jobs:
       - name: Install pytest
         run: |
           pip install pytest
+          pip install requests
       - name: Run tests
         run: |
           pytest -v --tb=no -q
+          ls
+      - name: Send requests
+        run: |
+          python test/sendtest.py ${{github.actor}} '${{github.repository}}'
