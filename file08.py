@@ -19,7 +19,7 @@ def main(data:str):
     for i in list:
         if i > max:
             max = i
-    return max
+    return int(max)
 a = 'txt_file/data08.txt'
 print(main(a))
 # Read data from file
