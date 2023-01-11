@@ -19,7 +19,7 @@ def main(data:str):
     for i in list:
         if i < min:
             min = i
-    return min
+    return int(min)
 a = 'txt_file/data09.txt'
 print(main(a))
 
